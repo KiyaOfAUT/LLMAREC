@@ -467,19 +467,20 @@ def evaluate(model, adj, train_df, test_df, user2idx, item2idx, idx2item,
 # Main
 # ──────────────────────────────────────────────────────────────────────
 
-def run_experiment():
+def run_experiment(n_epochs: int = 30):
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Device: {DEVICE}")
 
     # Hyperparameters
     EMB_DIM   = 64
     N_LAYERS  = 3
-    N_EPOCHS  = 30
     BATCH     = 2048
     LR        = 1e-3
     REG       = 1e-4
     K         = 10
     REL_THR   = 3.5
+
+    print(f"Training LightGCN for {n_epochs} epochs")
 
     train_df, test_df = load_data()
     user2idx, item2idx, idx2item = build_mappings(train_df, test_df)
@@ -494,7 +495,7 @@ def run_experiment():
 
     train_lightgcn(
         model, adj, BPRSampler(train_df, user2idx, item2idx, n_items),
-        n_epochs=N_EPOCHS, batch_size=BATCH, lr=LR, reg=REG,
+        n_epochs=n_epochs, batch_size=BATCH, lr=LR, reg=REG,
         device=DEVICE, val_df=test_df, user2idx=user2idx, item2idx=item2idx,
     )
 

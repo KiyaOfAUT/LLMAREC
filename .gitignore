@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Trained model weights (regenerate via training scripts)
+models/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# Logs and local run artifacts
+*.log
+benchmark_results.log
+benchmark_run.log
+
+# Environment / secrets
+.env
+.env.*
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local databases
+data/antigravity.db

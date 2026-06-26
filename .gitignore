@@ -38,5 +38,9 @@ benchmark_run.log
 .DS_Store
 Thumbs.db
 
+# LLM embeddings (regenerate via embedding.py)
+data/embeddings/
+*.npz
+
 # Local databases
 data/antigravity.db

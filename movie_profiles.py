@@ -7,7 +7,7 @@ from tqdm.asyncio import tqdm
 
 # --- Config ---
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://api.gapgpt.app/v1")
-LLM_API_KEY  = os.getenv("LLM_API_KEY", "sk-TACuXW1f88MxKsya3KaFtzBFmPw3PewcEYFCTCvVeNMGuRjm")
+LLM_API_KEY  = os.getenv("LLM_API_KEY", "")
 LLM_MODEL    = os.getenv("LLM_MODEL", "gemini-2.5-flash-lite")
 CONCURRENCY  = int(os.getenv("CONCURRENCY", "10"))
 OUTPUT_PATH  = "data/profiles/movies.json"

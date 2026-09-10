@@ -60,8 +60,6 @@ export LLM_MODEL="gpt-4o-mini"                     # chat model for profile gene
 export CONCURRENCY=10                              # parallel in-flight requests
 ```
 
-> ⚠️ **Security note:** several scripts (`user_profile.py`, `movie_profiles.py`, `embedding.py`, `fix_empty_movie_profiles.py`) currently have a live-looking API key hardcoded as the default value for `LLM_API_KEY`. Since this repo is public, that key should be rotated/revoked and removed from source (replace the default with `None` and fail fast if the env var isn't set) before pushing again.
-
 ## Usage
 
 Run each stage in order:
